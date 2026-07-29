@@ -24,7 +24,7 @@
             overflow: hidden;
         }
 
-        /* Contenedor principal con sombra exterior reducida y sutil */
+        /* Contenedor principal con borde rojo brillante tipo aviso y sin movimiento */
         .card-container {
             position: relative;
             width: 100%;
@@ -32,11 +32,16 @@
             max-width: 1200px;
             background-color: #d4d4d4; 
             border-radius: clamp(24px, 4vw, 48px);
+            
+            /* Borde rojo brillante de aviso (proporcional al tamaño de pantalla) */
+            border: clamp(3px, 0.7vw, 7px) solid #ff3b30;
+            
             overflow: hidden;
             
-            /* Sombra exterior muy suave y difuminada, con brillo superior limpio */
+            /* Sombra exterior suave combinada con un halo rojo de advertencia y brillo superior */
             box-shadow: 
-                0 15px 35px rgba(0, 0, 0, 0.06),
+                0 15px 35px rgba(0, 0, 0, 0.08),
+                0 0 20px rgba(255, 59, 48, 0.25),
                 inset 0 2px 4px rgba(255, 255, 255, 0.8);
                 
             display: flex;
@@ -117,7 +122,7 @@
 
         .subtitle {
             color: #3a3a3c;
-            font-size: clamp(1.2rem, 3.2vmin, 2.2rem);
+            font-size: clamp(1.2rem, 3.2vmin, 2.2rem); /* Cuerpo actualizado un poco más grande */
             font-weight: 500;
             line-height: 1.4;
             max-width: 800px;
