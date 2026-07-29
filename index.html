@@ -24,17 +24,17 @@
             overflow: hidden;
         }
 
-        /* Contenedor principal con color gris claro fijo en toda la tarjeta */
+        /* Contenedor principal con el color gris exacto #d4d4d4 */
         .card-container {
             position: relative;
             width: 100%;
             height: 100%;
             max-width: 1200px;
-            background-color: #d4d4d4; /* Gris claro fijo estándar de Apple */
+            background-color: #d4d4d4; 
             border-radius: clamp(24px, 4vw, 48px);
             overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), 
-                        0 0 0 1px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08), 
+                        0 0 0 1px rgba(0, 0, 0, 0.04);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -54,7 +54,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; height: 15vh;
-            background: linear-gradient(180deg, rgba(255,255,255,0.6) 0%, transparent 100%);
+            background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, transparent 100%);
             pointer-events: none;
             z-index: 1;
         }
@@ -64,24 +64,24 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: clamp(8px, 2vh, 24px);
+            gap: clamp(8px, 2vh, 20px);
             position: relative;
             z-index: 2;
             width: 100%;
         }
 
-        /* Símbolo fluido */
+        /* Símbolo ampliado de forma fluida */
         .icon {
-            width: clamp(60px, 15vmin, 150px);
-            height: clamp(60px, 15vmin, 150px);
-            filter: drop-shadow(0 8px 16px rgba(255, 59, 48, 0.15));
+            width: clamp(90px, 24vmin, 220px);
+            height: clamp(90px, 24vmin, 220px);
+            filter: drop-shadow(0 10px 20px rgba(255, 59, 48, 0.25));
             flex-shrink: 0;
         }
 
         /* Título Fluido */
         h1 {
             color: #1d1d1f;
-            font-size: clamp(2rem, 8vmin, 6rem);
+            font-size: clamp(2rem, 7vmin, 5.5rem);
             font-weight: 900;
             line-height: 0.95;
             letter-spacing: -0.05em;
@@ -91,7 +91,7 @@
         .content-body {
             display: flex;
             flex-direction: column;
-            gap: clamp(12px, 3vh, 32px);
+            gap: clamp(10px, 2.5vh, 28px);
             margin: auto 0;
             position: relative;
             z-index: 2;
@@ -101,7 +101,7 @@
         /* Foco extremo en NINGUNA ZONA */
         .highlight {
             color: #ff3b30;
-            font-size: clamp(1.8rem, 6vmin, 4.5rem);
+            font-size: clamp(1.6rem, 5.5vmin, 4rem);
             font-weight: 900;
             text-transform: uppercase;
             line-height: 1;
@@ -109,8 +109,8 @@
         }
 
         .subtitle {
-            color: #515154;
-            font-size: clamp(1rem, 3vmin, 1.8rem);
+            color: #3a3a3c;
+            font-size: clamp(1rem, 2.8vmin, 1.7rem);
             font-weight: 500;
             line-height: 1.4;
             max-width: 800px;
@@ -119,9 +119,9 @@
 
         /* Fecha minimizada al máximo */
         .footer {
-            color: #86868b;
+            color: #636366;
             font-size: clamp(0.75rem, 2vmin, 1.2rem);
-            font-weight: 500;
+            font-weight: 600;
             letter-spacing: 0.05em;
             text-transform: uppercase;
             position: relative;
@@ -135,7 +135,7 @@
 
     <div class="card-container">
         <div class="header">
-            <!-- Icono SVG de prohibido fumar -->
+            <!-- Icono SVG de prohibido fumar ampliado -->
             <svg class="icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="50" cy="50" r="42" stroke="#ff3b30" stroke-width="10" fill="none" />
                 <rect x="30" y="46" width="40" height="8" rx="2" fill="#1d1d1f" />
