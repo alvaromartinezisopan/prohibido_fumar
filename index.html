@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prohibido Fumar</title>
+    <style>
+        /* Reseteo y fuentes de Apple */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body, html {
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+            background-color: #ffffff; /* Fondo estrictamente blanco puro */
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: clamp(10px, 3vw, 40px); /* Padding dinámico */
+            overflow: hidden; /* Evitar scroll a nivel de body */
+        }
+
+        /* Contenedor gris clarito con efecto líquido encapsulado */
+        /* Rediseñado para adaptarse al 100% del contenedor padre sin cortarse */
+        .liquid-card-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            max-width: 1200px; /* Limite máximo en monitores gigantes */
+            background-color: #f2f2f7; /* Gris clarito estándar de Apple */
+            border-radius: clamp(24px, 4vw, 48px); /* Bordes dinámicos */
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), 
+                        0 0 0 1px rgba(0, 0, 0, 0.03);
+            display: flex; /* Necesario para que la capa de cristal ocupe todo */
+        }
+
+        /* --- EFECTO LIQUID (Tonos suaves para fondo claro) --- */
+        .liquid-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(8vw); /* Blur relativo a la pantalla */
+            opacity: 0.7;
+            animation: liquid-move 15s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .blob-1 {
+            width: 80vw;
+            height: 80vh;
+            background: rgba(255, 59, 48, 0.35); /* Rojo difuminado */
+            top: -20%;
+            left: -20%;
+        }
+
+        .blob-2 {
+            width: 70vw;
+            height: 70vh;
+            background: rgba(255, 255, 255, 1); /* Blanco puro para brillos en el cristal */
+            bottom: -10%;
+            right: -10%;
+            animation-delay: -5s;
+        }
+        
+        .blob-3 {
+            width: 60vw;
+            height: 60vh;
+            background: rgba(200, 200, 205, 0.4); /* Gris suave para dar profundidad */
+            bottom: 20%;
+            left: 10%;
+            animation-delay: -8s;
+            animation-duration: 20s;
+        }
+
+        @keyframes liquid-move {
+            0% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(5%, 5%) scale(1.1); }
+            100% { transform: translate(-5%, 5%) scale(0.9); }
+        }
+
+        /* --- CAPA DE CRISTAL CLARO (Glassmorphism) --- */
+        .glass-layer {
+            position: relative; /* Cambiado a relativo dentro del wrapper flex */
+            width: 100%;
+            height: 100%;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.4); /* Cristal translúcido claro */
+            backdrop-filter: blur(40px) saturate(150%);
+            -webkit-backdrop-filter: blur(40px) saturate(150%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: clamp(24px, 5vh, 64px) clamp(20px, 4vw, 60px); /* Padding súper fluido */
+            text-align: center;
+            overflow-y: auto; /* Permite scroll interno si la pantalla es enanísima, para que NUNCA se corte */
+            scrollbar-width: none; /* Ocultar scrollbar Firefox */
+        }
+        
+        .glass-layer::-webkit-scrollbar {
+            display: none; /* Ocultar scrollbar Chrome/Safari */
+        }
+
+        /* Reflejo superior del cristal */
+        .glass-layer::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; height: 15vh;
+            background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* --- CONTENIDO --- */
+        /* Uso intensivo de 'cqi' o combinaciones de vw/vh para fluid typography */
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(8px, 2vh, 24px);
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        /* Símbolo fluido */
+        .icon {
+            width: clamp(60px, 15vmin, 150px);
+            height: clamp(60px, 15vmin, 150px);
+            filter: drop-shadow(0 8px 16px rgba(255, 59, 48, 0.2));
+            flex-shrink: 0; /* Evitar que el icono se aplaste */
+        }
+
+        /* Título Fluido */
+        h1 {
+            color: #1d1d1f;
+            font-size: clamp(2rem, 8vmin, 6rem); /* Usa vmin para adaptarse a ancho o alto, lo que sea menor */
+            font-weight: 900;
+            line-height: 0.95;
+            letter-spacing: -0.05em;
+        }
+
+        /* Cuerpo del texto */
+        .content-body {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(12px, 3vh, 32px);
+            margin: auto 0; /* Centrado vertical con flex */
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        /* Foco extremo en NINGUNA ZONA */
+        .highlight {
+            color: #ff3b30;
+            font-size: clamp(1.8rem, 6vmin, 4.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1;
+            letter-spacing: -0.03em;
+        }
+
+        .subtitle {
+            color: #515154;
+            font-size: clamp(1rem, 3vmin, 1.8rem);
+            font-weight: 500;
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Fecha minimizada al máximo */
+        .footer {
+            color: #86868b;
+            font-size: clamp(0.75rem, 2vmin, 1.2rem);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 2;
+            margin-top: clamp(16px, 4vh, 32px);
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="liquid-card-wrapper">
+        <!-- Fondo líquido animado en tonos claros -->
+        <div class="liquid-blob blob-1"></div>
+        <div class="liquid-blob blob-2"></div>
+        <div class="liquid-blob blob-3"></div>
+
+        <!-- Cristal esmerilado claro superpuesto -->
+        <div class="glass-layer">
+            
+            <div class="header">
+                <!-- Icono SVG -->
+                <svg class="icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="42" stroke="#ff3b30" stroke-width="10" fill="none" />
+                    <rect x="30" y="46" width="40" height="8" rx="2" fill="#1d1d1f" />
+                    <rect x="58" y="46" width="12" height="8" rx="2" fill="#86868b" />
+                    <path d="M 35 40 Q 30 30 40 25 T 35 15" stroke="#86868b" stroke-width="2" fill="none" stroke-linecap="round" />
+                    <path d="M 45 40 Q 50 30 40 25 t 5 -10" stroke="#86868b" stroke-width="2" fill="none" stroke-linecap="round" />
+                    <line x1="20" y1="20" x2="80" y2="80" stroke="#ff3b30" stroke-width="10" />
+                </svg>
+
+                <h1>PROHIBIDO<br>FUMAR</h1>
+            </div>
+
+            <div class="content-body">
+                <div class="highlight">En ninguna zona</div>
+                <div class="subtitle">
+                    Queda terminantemente prohibido, ni siquiera en los espacios que estaban habilitados previamente.
+                </div>
+            </div>
+
+            <div class="footer">
+                Hasta el 7 de septiembre
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
