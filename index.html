@@ -90,6 +90,7 @@
         .icon {
             width: clamp(90px, 24vmin, 220px);
             height: clamp(90px, 24vmin, 220px);
+            object-fit: contain; /* Mantiene la proporción de la imagen PNG */
             filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0)) 
                     drop-shadow(0 4px 12px rgba(255, 59, 48, 0));
             flex-shrink: 0;
@@ -225,15 +226,8 @@
 
     <div class="card-container">
         <div class="header">
-            <!-- Icono SVG de prohibido fumar -->
-            <svg class="icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="50" cy="50" r="42" stroke="#ff3b30" stroke-width="10" fill="none" />
-                <rect x="30" y="46" width="40" height="8" rx="2" fill="#1d1d1f" />
-                <rect x="58" y="46" width="12" height="8" rx="2" fill="#86868b" />
-                <path d="M 35 40 Q 30 30 40 25 T 35 15" stroke="#86868b" stroke-width="2" fill="none" stroke-linecap="round" />
-                <path d="M 45 40 Q 50 30 40 25 t 5 -10" stroke="#86868b" stroke-width="2" fill="none" stroke-linecap="round" />
-                <line x1="20" y1="20" x2="80" y2="80" stroke="#ff3b30" stroke-width="10" />
-            </svg>
+            <!-- Icono PNG reemplazado -->
+            <img class="icon" src="https://cdn.pixabay.com/photo/2021/11/06/06/19/signage-6772535_1280.png" alt="Prohibido Fumar">
 
             <h1>PROHIBIDO <br>FUMAR</h1>
         </div>
