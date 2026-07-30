@@ -21,8 +21,8 @@
             justify-content: center;
             align-items: center;
             
-            /* MARGEN LLEVADO AL LÍMITE: 32px es el mínimo estricto para que el brillo de 30px no se corte */
-            padding: clamp(32px, 3vw, 40px); 
+            /* Margen holgado para que el brillo más suave y contenido no se corte */
+            padding: clamp(24px, 3vw, 36px); 
             
             overflow: hidden;
         }
@@ -44,10 +44,10 @@
             
             overflow: hidden;
             
-            /* SOMBRA Y BRILLO: Halo rojo intenso de 30px */
+            /* SOMBRA Y BRILLO REDUCIDO: Halo suavizado de 15px para que no se corte */
             box-shadow: 
-                0 15px 35px rgba(0, 0, 0, 0.05),
-                0 0 30px rgba(255, 59, 48, 0.9), 
+                0 10px 25px rgba(0, 0, 0, 0.05),
+                0 0 20px rgba(255, 59, 48, 1), 
                 inset 0 2px 4px rgba(255, 255, 255, 0.8);
                 
             display: flex;
@@ -55,7 +55,7 @@
             justify-content: space-between;
             align-items: center;
             
-            padding: clamp(24px, 5vh, 64px) clamp(12px, 2vw, 30px);
+            padding: clamp(20px, 4vh, 50px) clamp(12px, 2vw, 30px);
             text-align: center;
             overflow-y: auto;
             scrollbar-width: none;
@@ -140,14 +140,14 @@
 
         /* Fecha en negrita y destacada */
         .footer {
-            color: #1d1d1f; /* Oscurecido ligeramente para ganar contraste y presencia en negrita */
+            color: #1d1d1f;
             font-size: clamp(1rem, 2vmin, 1.3rem);
-            font-weight: 800; /* Negrita marcada */
+            font-weight: 800;
             letter-spacing: 0.05em;
             text-transform: uppercase;
             position: relative;
             z-index: 2;
-            margin-top: clamp(16px, 4vh, 32px);
+            margin-top: clamp(8px, 2vh, 16px);
             flex-shrink: 0;
             text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
         }
@@ -165,7 +165,7 @@
                     "icon footer";
                 align-content: center;
                 text-align: left;
-                padding: 16px 12px;
+                padding: 12px;
                 gap: 4px 12px; 
                 border-radius: 20px;
                 border-width: 2px;
@@ -216,7 +216,7 @@
 
             .footer {
                 grid-area: footer;
-                margin-top: 4px;
+                margin-top: 2px;
                 font-size: 0.75rem;
             }
         }
