@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prohibido Fumar</title>
+    <title>Prohibido Fumar y Vapear</title>
     <style>
         /* Reseteo y fuentes de Apple */
         * {
@@ -44,7 +44,7 @@
             
             overflow: hidden;
             
-            /* SOMBRA Y BRILLO REDUCIDO: Halo suavizado de 15px para que no se corte */
+            /* SOMBRA Y BRILLO REDUCIDO: Halo suavizado de 20px para que no se corte */
             box-shadow: 
                 0 10px 25px rgba(0, 0, 0, 0.05),
                 0 0 20px rgba(255, 59, 48, 1), 
@@ -90,7 +90,7 @@
         .icon {
             width: clamp(90px, 24vmin, 220px);
             height: clamp(90px, 24vmin, 220px);
-            object-fit: contain; /* Mantiene la proporción de la imagen PNG */
+            object-fit: contain; /* Mantiene la proporción de la imagen */
             filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0)) 
                     drop-shadow(0 4px 12px rgba(255, 59, 48, 0));
             flex-shrink: 0;
@@ -99,7 +99,7 @@
         /* Título Fluido */
         h1 {
             color: #1d1d1f;
-            font-size: clamp(2.5rem, 7vmin, 5.5rem);
+            font-size: clamp(2.3rem, 6.5vmin, 5rem);
             font-weight: 900;
             line-height: 0.95;
             letter-spacing: -0.05em;
@@ -189,7 +189,7 @@
 
             h1 {
                 grid-area: header;
-                font-size: 1.1rem;
+                font-size: 1.05rem;
                 line-height: 1.2;
             }
 
@@ -226,10 +226,10 @@
 
     <div class="card-container">
         <div class="header">
-            <!-- Icono PNG -->
-            <img class="icon" src="https://cdn.pixabay.com/photo/2021/11/06/06/19/signage-6772535_1280.png" alt="Prohibido Fumar">
+            <!-- Icono combinado único -->
+            <img class="icon" src="https://media.istockphoto.com/id/1354974774/vector/forbidden-sign-of-smoke-cigarette-and-vape-ban-to-vaping-and-smoking-icon-of-electronic.jpg?s=612x612&w=0&k=20&c=ay0ex350Vax567F0PPxzJlT1dMlWK5CQ6VBaO4JoTOw=" alt="Prohibido Fumar y Vapear">
 
-            <h1>PROHIBIDO <br>FUMAR</h1>
+            <h1>PROHIBIDO <br>FUMAR / VAPEAR</h1>
         </div>
 
         <div class="content-body">
